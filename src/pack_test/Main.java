@@ -28,7 +28,7 @@ public class Main {
          
         Info=Read.read(path); //citire informatii fisier  
         img=new BufferedImage(Info[1],Info[2],BufferedImage.TYPE_BYTE_INDEXED);//BufferedImage.TYPE_BYTE_INDEXED
-        //System.out.println("image type bufferedimage "+img.getType()
+      
         System.out.println("Timp citire info : " + (System.nanoTime() - start) + " nanosecunde");
         //citire imagine pe thread-uri Producer
         Multithreading thread1 = new Multithreading();
@@ -132,28 +132,11 @@ public class Main {
         thread24.setImage(img);
         //////////
         thread21.start(); 
-        /*
-        try {             
-            Thread.sleep(100);               
-        }
-        catch (Exception e) {
-    	 System.out.println(e);
-        }
-        */
+ 
         thread22.start();/*
-        try {             
-            Thread.sleep(100);               
-        }
-        catch (Exception e) {
-    	 System.out.println(e);
-        }*/
+  
         thread23.start();/*
-        try {             
-                Thread.sleep(100);               
-        }
-        catch (Exception e) {
-        	 System.out.println(e);
-        }*/
+    
         thread24.start();
         thread21.join();
         thread22.join();
